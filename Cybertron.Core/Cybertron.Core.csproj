@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cybertron.Domain\Cybertron.Domain.csproj" />
+    <ProjectReference Include="..\Cybertron.Infrastructure\Cybertron.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\UseCase\" />
+    <Folder Include="UseCases\" />
+  </ItemGroup>
+
+</Project>

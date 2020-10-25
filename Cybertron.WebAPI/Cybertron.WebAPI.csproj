@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cybertron.Core\Cybertron.Core.csproj" />
+    <ProjectReference Include="..\Cybertron.IoC\Cybertron.IoC.csproj" />
+    <ProjectReference Include="..\Cybertron.Mappings\Cybertron.Mappings.csproj" />
+  </ItemGroup>
+
+
+</Project>

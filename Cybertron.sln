@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cybertron.WebAPI", "Cybertron.WebAPI\Cybertron.WebAPI.csproj", "{62E1A343-2B25-4F94-8B29-134FCE113197}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cybertron.Core", "Cybertron.Core\Cybertron.Core.csproj", "{B4922985-440B-4918-9EC7-D5DED3C49B9B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cybertron.IoC", "Cybertron.IoC\Cybertron.IoC.csproj", "{B2117FBE-0930-440E-9B1B-4C02748E9A7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cybertron.Domain", "Cybertron.Domain\Cybertron.Domain.csproj", "{2099743A-D4D6-415E-984C-ED7E5CAE1881}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cybertron.Infrastructure", "Cybertron.Infrastructure\Cybertron.Infrastructure.csproj", "{00AC3ACF-7922-4C73-9ED1-44B209A4DFB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cybertron.Mappings", "Cybertron.Mappings\Cybertron.Mappings.csproj", "{EBE1A268-E211-4429-A13D-F63CF15B735D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62E1A343-2B25-4F94-8B29-134FCE113197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62E1A343-2B25-4F94-8B29-134FCE113197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62E1A343-2B25-4F94-8B29-134FCE113197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62E1A343-2B25-4F94-8B29-134FCE113197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4922985-440B-4918-9EC7-D5DED3C49B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4922985-440B-4918-9EC7-D5DED3C49B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4922985-440B-4918-9EC7-D5DED3C49B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4922985-440B-4918-9EC7-D5DED3C49B9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2117FBE-0930-440E-9B1B-4C02748E9A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2117FBE-0930-440E-9B1B-4C02748E9A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2117FBE-0930-440E-9B1B-4C02748E9A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2117FBE-0930-440E-9B1B-4C02748E9A7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2099743A-D4D6-415E-984C-ED7E5CAE1881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2099743A-D4D6-415E-984C-ED7E5CAE1881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2099743A-D4D6-415E-984C-ED7E5CAE1881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2099743A-D4D6-415E-984C-ED7E5CAE1881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00AC3ACF-7922-4C73-9ED1-44B209A4DFB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00AC3ACF-7922-4C73-9ED1-44B209A4DFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00AC3ACF-7922-4C73-9ED1-44B209A4DFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00AC3ACF-7922-4C73-9ED1-44B209A4DFB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBE1A268-E211-4429-A13D-F63CF15B735D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE1A268-E211-4429-A13D-F63CF15B735D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE1A268-E211-4429-A13D-F63CF15B735D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE1A268-E211-4429-A13D-F63CF15B735D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B18021AF-EFB4-42DD-97DE-0CDC66E62905}
+	EndGlobalSection
+EndGlobal
