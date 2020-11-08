@@ -1,5 +1,4 @@
 ﻿using Cybertron.Domain.Entities;
-using Cybertron.Infrastructure.Bases;
 using Cybertron.Infrastructure.Interfaces;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +7,7 @@ using System.Linq;
 
 namespace Cybertron.Infrastructure.Repositories
 {
-    public class DictRepository : BaseRepository, IDictRepository
+    public class DictRepository : Repository, IDictRepository
     {
         private const string SCHEMA = "CYBERTRON";
         private const string TABLE = "DICTIONARY";
@@ -23,8 +22,20 @@ namespace Cybertron.Infrastructure.Repositories
 
         public async Task<Dict> GetDictionaryEntryByWord(string word)
         {
-            var query = $@"SELECT * FROM {SCHEMA}.{TABLE} WHERE WORD = @WORD";
-            return await QuerySingleAsync<Dict>(query, new { Word = word });
+            var query = $@"SELECT * FROM {SCHEMA}.{TABLE} WHERE WORD = :WORD";
+            return await QuerySingleAsync<Dict>(query, new { WORD = word });
+        }
+
+        public async Task AddDictEntry(Dict dict)
+        {
+            var query = $@"INSERT INTO {SCHEMA}.{TABLE} (WORD, DESCRIPTION)
+                            VALUES (:WORD, :DESCRIPTION)
+                        ";
+            await ExecuteAsync(query, new
+            {
+                WORD = dict.Word,
+                DESCRIPTION = dict.Description
+            });
         }
     }
 }

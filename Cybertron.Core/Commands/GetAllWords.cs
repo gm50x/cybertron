@@ -14,7 +14,7 @@ namespace Cybertron.Core.Commands
         }
         public async Task<string[]> Activate()
         {
-            var dicts = await _uow.Dictionary.GetAllDictionaryEntires();
+            var dicts = await _uow.GetRepository<IDictRepository>().GetAllDictionaryEntires();
             return dicts.Select(x => x.Word).ToArray();
         }
     }

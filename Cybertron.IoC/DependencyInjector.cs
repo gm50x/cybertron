@@ -6,7 +6,6 @@ using Cybertron.Infrastructure.Interfaces;
 using System.Data;
 using Microsoft.Extensions.Configuration;
 using Npgsql;
-
 namespace Cybertron.IoC
 {
     public static class DependencyInjector
@@ -25,20 +24,19 @@ namespace Cybertron.IoC
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;
-        }
 
+        }
 
         public static IServiceCollection AddCommands(this IServiceCollection services)
         {
             services.AddScoped<IGetRandomWord, GetRandomWord>();
             services.AddScoped<IGetAllWords, GetAllWords>();
+            services.AddScoped<IGetWordByName, GetWordByName>();
             return services;
         }
 
         public static IServiceCollection AddUseCases(this IServiceCollection services)
         {
-            services.AddScoped<IGetRandomWord, GetRandomWord>();
-            services.AddScoped<IGetAllWords, GetAllWords>();
             return services;
         }
     }
