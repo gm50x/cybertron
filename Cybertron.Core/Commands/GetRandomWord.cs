@@ -17,7 +17,9 @@ namespace Cybertron.Core.Commands
 
         public async Task<string> Activate()
         {
-            var words = (await _uow.Dictionary.GetAllDictionaryEntires()).Select(x => x.Word).ToArray();
+            var words = (await _uow.GetRepository<IDictRepository>()
+                                        .GetAllDictionaryEntires())
+                                        .Select(x => x.Word).ToArray();
             var random = new Random();
             return words[random.Next(words.Length)];
         }

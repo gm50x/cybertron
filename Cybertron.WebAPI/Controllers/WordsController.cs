@@ -14,6 +14,12 @@ namespace Cybertron.WebAPI.Controllers
             return command.Activate();
         }
 
+        [HttpGet("{word}")]
+        public Task<string> Get(string word, [FromServices] IGetWordByName command)
+        {
+            return command.Activate(word);
+        }
+
         [HttpGet("random")]
         public Task<string> Get([FromServices] IGetRandomWord command)
         {

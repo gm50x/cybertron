@@ -1,11 +1,9 @@
-﻿using System;
-
-namespace Cybertron.Infrastructure.Interfaces
+﻿namespace Cybertron.Infrastructure.Interfaces
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork
     {
-        IDictRepository Dictionary { get; }
-        void Begin();
+        T GetRepository<T>();
+        void BeginTransaction();
         void Commit();
         void Rollback();
     }
