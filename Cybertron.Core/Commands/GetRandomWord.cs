@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Cybertron.Core.Interfaces.Commands;
+using Cybertron.Core.Interfaces.Services;
 using Cybertron.Infrastructure.Interfaces;
 
 namespace Cybertron.Core.Commands
@@ -9,10 +10,11 @@ namespace Cybertron.Core.Commands
     public class GetRandomWord : IGetRandomWord
     {
         private readonly IUnitOfWork _uow;
-
-        public GetRandomWord(IUnitOfWork uow)
+        private readonly INotificationService _notification;
+        public GetRandomWord(IUnitOfWork uow, INotificationService notification)
         {
             _uow = uow;
+            _notification = notification;
         }
 
         public async Task<string> Activate()
