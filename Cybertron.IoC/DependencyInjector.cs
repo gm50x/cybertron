@@ -6,6 +6,9 @@ using Cybertron.Infrastructure.Interfaces;
 using System.Data;
 using Microsoft.Extensions.Configuration;
 using Npgsql;
+using Cybertron.Core.Services;
+using Cybertron.Core.Interfaces.Services;
+
 namespace Cybertron.IoC
 {
     public static class DependencyInjector
@@ -17,6 +20,12 @@ namespace Cybertron.IoC
                 return new NpgsqlConnection(connectionString);
             });
 
+            return services;
+        }
+
+        public static IServiceCollection AddNotificationService(this IServiceCollection services)
+        {
+            services.AddScoped<INotificationService, NotificationService>();
             return services;
         }
 
