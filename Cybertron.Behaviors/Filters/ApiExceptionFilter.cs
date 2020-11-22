@@ -20,7 +20,7 @@ namespace Cybertron.Behaviors.Filters
         }
         public override void OnException(ExceptionContext context)
         {
-            string[] messages = _notification.Messages.Concat(new string[] { context.Exception.Message }).ToArray();
+            string[] messages = _notification.Messages.Concat(new string[] { context.Exception.Message, context.Exception.Message }).ToArray();
 
             if (context.Exception is ArgumentException || context.Exception is ArgumentNullException || context.Exception is ValidationException)
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
