@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net;
 
 namespace Cybertron.Behaviors.Filters
 {
@@ -22,16 +23,11 @@ namespace Cybertron.Behaviors.Filters
             string[] messages = _notification.Messages.Concat(new string[] { context.Exception.Message }).ToArray();
 
             if (context.Exception is ArgumentException || context.Exception is ArgumentNullException || context.Exception is ValidationException)
-            {
-                context.HttpContext.Response.StatusCode = 400;
-                context.Result = new JsonResult(messages);
-            }
+                context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
             else
-            {
-                context.HttpContext.Response.StatusCode = 500;
-                context.Result = new JsonResult(messages);
-            }
+                context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
+            context.Result = new JsonResult(messages);
             _logger.LogError(messages.Aggregate((acc, val) => $"{acc}, {val}"));
 
             base.OnException(context);

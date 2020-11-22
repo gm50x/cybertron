@@ -21,15 +21,15 @@ namespace Cybertron.Behaviors.Filters
             if (_notifications.HasAny())
             {
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                context.Result = new JsonResult(new
-                {
-                    Notifications = _notifications.Messages,
-                    Result = (context.Result as ObjectResult).Value
-                });
+                context.Result = new JsonResult(_notifications.Messages);
+                //context.Result = new JsonResult(new
+                //{
+                //    Notifications = _notifications.Messages,
+                //    Result = (context.Result as ObjectResult).Value
+                //});
 
                 _logger.LogWarning(_notifications.Messages.Aggregate((acc, val) => $"{acc}, {val}"));
             }
-
 
             base.OnResultExecuting(context);
         }
